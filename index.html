@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Clock web</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script>
+      let d;
+      let date;
+      let clock;
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      setInterval(() => {
+        d = new Date();
+        date = d.toLocaleDateString(undefined, options);
+        clock = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        document.getElementById("time").innerHTML = clock + "<br>";
+        document.getElementById("date").innerHTML = date;
+      }, 1000);
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-primary bg-primary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand "
+          style="color: black; font-size: 30px; font-weight: 600; margin-left: 180px;"
+          href="#"
+          
+          >Clock</a
+        >
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron" style="background-color: chocolate; width: 700px; margin-left: 170px; margin-top: 80px; ">
+        <h1>Current Time : <span id="time"></span></h1>
+        <h2>Today Date : <span id="date"></span></h2>
+        <q>
+        Lost time is never found again
+        </q>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
